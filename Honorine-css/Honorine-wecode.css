@@ -8,11 +8,14 @@
     background-size:cover;
     background-color:rgba(0, 0, 0, 0.5);
 }
-.navbar{
+.section-1,.navbar{
     text-align:center;
 	width:100%;
 	position:relative;
 	height:auto;
 	overflow:hidden;
 	background:none;
+}
+.aboutme{
+    text-align: center;
 }
