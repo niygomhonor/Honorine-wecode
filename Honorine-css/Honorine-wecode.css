@@ -1,10 +1,18 @@
 .container{
-    background-image: url("https://images.adsttc.com/media/images/56a2/dde8/e58e/cef0/b100/008a/slideshow/portada_2._Buerger_Center_for_Advanced_Pediatric_Care_Looking_east_Photography_by_Jeff_Goldberg_Esto_).jpg?1453514173");
-    width:100%;
-    height:800px;
+    background-image: url("https://o.aolcdn.com/images/dims?quality=85&image_uri=http%3A%2F%2Fo.aolcdn.com%2Fdims-shared%2Fdims3%2FGLOB%2Fcrop%2F5760x3840%2B0%2B0%2Fresize%2F1600x1067%21%2Fformat%2Fjpg%2Fquality%2F85%2Fhttp%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2F6b167f7c9b50be7effa87ebc08276afb%2F202435900%2Fstock-photo-hacker-using-laptop-lots-of-digits-on-the-computer-screen-180687500.jpg&client=amp-blogside-v2&signature=311a2598e814d22de2771cfaa4c31c2f69502202");
+    height:500px;
     margin-bottom:60px;
     top:0;
     left:0;
     right:0;
     background-size:cover;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+.navbar{
+    text-align:center;
+	width:100%;
+	position:relative;
+	height:auto;
+	overflow:hidden;
+	background:none;
 }
