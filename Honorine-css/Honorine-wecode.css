@@ -18,4 +18,14 @@
 }
 .aboutme{
     text-align: center;
+    background-color: darkslategrey;
+}
+.aboutme img{
+    border-radius: 50%;
+}
+.Section-2{
+    text-align: center;
+}
+.education{
+    text-align: center;
 }
