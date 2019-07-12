@@ -60,7 +60,11 @@ a{
 }
 .Section-2{
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
 .education{
 
     text-align: center;
@@ -97,10 +101,23 @@ a{
      text-align:center;
      font-family:none;
 }
-.interest{
-    text-align: center;
-    background-image: url("https://media3.picsearch.com/is?9iLtysU0sjD5VlqUvxlnfkumZ7_7O5YBmPUXjjmQbr4&height=226");
+.section-3{
+background-color: rgb(145, 176, 196);
 }
+.interest{
+   text-align: center;
+    /* background-image: url("https://media3.picsearch.com/is?9iLtysU0sjD5VlqUvxlnfkumZ7_7O5YBmPUXjjmQbr4&height=226");
+    box-shadow: 0 4px 7px 0 rgba(0,0,0,0.7);
+     width:500px;
+     margin:top;
+     font-family:none;
+     float: none;
+     display:flex; */
+     
+     
+    
+}
+
 .last{
     text-align: center;
 }
