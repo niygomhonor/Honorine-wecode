@@ -1,3 +1,8 @@
+h2{
+    text-align: center;
+    border: 5px;
+    border-block-end: 10px;
+}
 .container{
     background-image: url("https://o.aolcdn.com/images/dims?quality=85&image_uri=http%3A%2F%2Fo.aolcdn.com%2Fdims-shared%2Fdims3%2FGLOB%2Fcrop%2F5760x3840%2B0%2B0%2Fresize%2F1600x1067%21%2Fformat%2Fjpg%2Fquality%2F85%2Fhttp%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2F6b167f7c9b50be7effa87ebc08276afb%2F202435900%2Fstock-photo-hacker-using-laptop-lots-of-digits-on-the-computer-screen-180687500.jpg&client=amp-blogside-v2&signature=311a2598e814d22de2771cfaa4c31c2f69502202");
     height:500px;
@@ -9,17 +14,47 @@
     background-color:rgba(0, 0, 0, 0.5);
 }
 .section-1,.navbar{
-    text-align:center;
+
 	width:100%;
 	position:relative;
 	height:auto;
 	overflow:hidden;
 	background:none;
 }
+.section-1 h2{
+    border-bottom-color: darkorange;
+    border-color: darkcyan;
+    color: crimson;
+}
+.section-1 .navbar a{
+   display: inline-block;
+   padding: 1em 3em;
+   text-decoration-color: honeydew;
+   border-bottom: 2px solid #fff;
+   transition-property: all .2s linear 0s;
+   -moz-transition: all .2s linear 0s;
+   -webkit-transition: all .2s linear 0s;
+   font-size: 15px;
+
+}
+a:hover{
+color:royalblue;
+border: 5px;
+box-shadow:5em 5px 20px #94a964;
+}
+a{
+    color: rgb(226, 109, 12);
+    text-align-last: left;
+    
+}
 .aboutme{
     text-align: center;
     background-color: darkslategrey;
+    display:flex;
+    flex-direction: row; 
+    justify-content: space-around;
 }
+
 .aboutme img{
     border-radius: 50%;
 }
@@ -27,5 +62,45 @@
     text-align: center;
 }
 .education{
+
+    text-align: center;
+    padding-left: 20%;
+    display:flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.contacts{
+    display: inline;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    line-height: 50px;
+    font-family: brandico;
+    font-size: 28px;
+    text-align: center;
+    color: #555;
+    border-radius: 10px;
+    background: #94a964;
+    overflow: hidden;
+    cursor: pointer;
+}
+.skill{
+    display:flex;
+    flex-direction: row-reverse; 
+    justify-content: space-around;
+}
+.divix,.divixi,.divizo{ 
+     box-shadow: 0 4px 7px 0 rgba(0,0,0,0.5);
+     width:300px;
+     margin:top;
+     text-align:center;
+     font-family:none;
+}
+.interest{
+    text-align: center;
+    background-image: url("https://media3.picsearch.com/is?9iLtysU0sjD5VlqUvxlnfkumZ7_7O5YBmPUXjjmQbr4&height=226");
+}
+.last{
     text-align: center;
 }
