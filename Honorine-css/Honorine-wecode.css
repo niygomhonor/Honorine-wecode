@@ -1,11 +1,13 @@
-h2{
+h2.head-2{
     text-align: center;
     border: 5px;
     border-block-end: 10px;
+    color: lightcoral;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container{
-    background-image: url("https://o.aolcdn.com/images/dims?quality=85&image_uri=http%3A%2F%2Fo.aolcdn.com%2Fdims-shared%2Fdims3%2FGLOB%2Fcrop%2F5760x3840%2B0%2B0%2Fresize%2F1600x1067%21%2Fformat%2Fjpg%2Fquality%2F85%2Fhttp%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2F6b167f7c9b50be7effa87ebc08276afb%2F202435900%2Fstock-photo-hacker-using-laptop-lots-of-digits-on-the-computer-screen-180687500.jpg&client=amp-blogside-v2&signature=311a2598e814d22de2771cfaa4c31c2f69502202");
-    height:500px;
+    background-image: url("http://tinymoongarden.com/wp-content/uploads/amazing-programmer-desk-setup-with-bettercoder-behind-the-scenes-desksetup-tour-youtube.jpg");
+    height:20%;
     margin-bottom:60px;
     top:0;
     left:0;
@@ -21,10 +23,14 @@ h2{
 	overflow:hidden;
 	background:none;
 }
-.section-1 h2{
-    border-bottom-color: darkorange;
-    border-color: darkcyan;
-    color: crimson;
+.section-1 h1{
+    text-shadow: rgba(51, 3, 3, 0.5);
+    float: right;
+   text-align: center;
+    color: #7c854b;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
+
 }
 .section-1 .navbar a{
    display: inline-block;
@@ -49,51 +55,52 @@ a{
 }
 .aboutme{
     text-align: center;
-    background-color: darkslategrey;
+    background-color: #607474;
     display:flex;
     flex-direction: row; 
     justify-content: space-around;
+    padding: 20px;
+    height: 100%;
 }
 
-.aboutme img{
-    border-radius: 50%;
-}
-.Section-2{
-    text-align: center;
+.Section-2 ol{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-
+.project-1,.project-2{
+    box-shadow: 0 4px 7px 0 #2c181880;
+    width:300px;
+    margin:top;
+    text-align:center;
+    font-family:none;
+}
+.description{
+    color: darkblue;
+}
 .education{
-
-    text-align: center;
-    padding-left: 20%;
+     height: 100%;
+    padding-left: 5%;
     display:flex;
     flex-direction: row; 
     justify-content: space-between;
 }
+.education,.gom{
+float: right;
+margin-left: 20px;
 
-.contacts{
-    display: inline;
-    width: 50px;
-    height: 50px;
-    margin: 0 10px;
-    line-height: 50px;
-    font-family: brandico;
-    font-size: 28px;
-    text-align: center;
-    color: #555;
-    border-radius: 10px;
-    background: #94a964;
-    overflow: hidden;
-    cursor: pointer;
 }
+.gom,table th td{
+    border: 3em;
+border-color: darkolivegreen;
+}
+
 .skill{
     display:flex;
-    flex-direction: row-reverse; 
+    flex-direction: row; 
     justify-content: space-around;
 }
+
 .divix,.divixi,.divizo{ 
      box-shadow: 0 4px 7px 0 rgba(0,0,0,0.5);
      width:300px;
@@ -101,23 +108,104 @@ a{
      text-align:center;
      font-family:none;
 }
+.divix:hover,.divixi:hover,.divizo:hover{
+    cursor: pointer;
+    transition: all 0.38s ease;
+    padding: 7px;
+    background: #fff;
+    margin-bottom: 12px;
+}
 .section-3{
 background-color: rgb(145, 176, 196);
 }
 .interest{
-   text-align: center;
-    /* background-image: url("https://media3.picsearch.com/is?9iLtysU0sjD5VlqUvxlnfkumZ7_7O5YBmPUXjjmQbr4&height=226");
-    box-shadow: 0 4px 7px 0 rgba(0,0,0,0.7);
-     width:500px;
-     margin:top;
-     font-family:none;
-     float: none;
-     display:flex; */
-     
-     
-    
+text-align: center; 
 }
 
 .last{
     text-align: center;
 }
+
+#A{
+    height: 100%;
+    position: relative;
+    -webkit-animation: move 3s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+    animation: move 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    
+}
+#B{
+    height: 100%;
+    position: relative;
+    -webkit-animation: move 3s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+    animation: move 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    
+}
+#C{
+    height: 100%;
+    position: relative;
+    -webkit-animation: move 3s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+    animation: move 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;  
+}
+#D{
+    height: 100%;
+    position: relative;
+    -webkit-animation: move 3s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+    animation: move 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+#E{
+    height: 100%;
+    position: relative;
+    -webkit-animation: move 3s;  /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+    animation: move 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+
+}
+@-webkit-keyframes move {
+    from {top:100px; }
+    to {top: 0px;}
+  }
+  
+  @keyframes move {
+    from {top: 100px; }
+    to {top: 0px;}
+  }
+  .icons{
+      display:inline-block;
+      width: 53px;
+      height: 60px;
+      background:#94a964;
+      margin: 10px;
+      border-radius: 30%;
+      box-shadow: 0 5px -5px #217fd680;
+      color: rgb(32, 9, 114);
+      overflow: hidden;
+      position: relative;
+  }
+  .icons i{
+     line-height: 60px;
+      font-size: 50px;
+      transition: 2s linear;
+  }
+  .icons:hover{
+      transform: scale(1.3);
+      
+  }

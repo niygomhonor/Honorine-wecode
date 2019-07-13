@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_animation-fill-mode2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  -webkit-animation: mymove 3s;  /* Safari 4.0 - 8.0 */
+  -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+  animation: mymove 3s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  from {top: 0px; background-color: yellow;}
+  to {top: 200px;}
+}
+
+@keyframes mymove {
+  from {top: 0px; background-color: yellow;}
+  to {top: 200px;}
+}
+</style>
+</head>
+<body contenteditable="false">
+
+<p>Let the div element get the style values set by the first keyframe before the animation starts (during the animation-delay period):</p>
+
+<div></div>
+
+<p><strong>Note:</strong> The animation-fill-mode property is not supported in Internet Explorer 9 and earlier versions.</p>
+
+
+
+</body></html>

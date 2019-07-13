@@ -1,0 +1,274 @@
+/**
+ * @fileoverview Provides layout specific functionality for HTML5 layout.
+ * This includes layout specific directives, that are responsible for
+ * interaction with the user, alignment of the blocks and texts in them.
+ * Also includes layout specification and initialization.
+ */
+
+
+/**
+ * Utils object with specific functionality for the layout.
+ * @param {!Object} angular AngularJS object.
+ * @return {!Object.<function>} Available functions.
+ */
+var layoutUtils = (function(angular) {
+  /**
+   * Minimal aspect ratio to consider an image to be vertical.
+   * @const {number}
+   */
+  var ASPECT_RATIO = 1.2;
+
+  var module = angular.module('custom', []);
+  var loadedRes = {};
+
+  /**
+   * Selectors to find elements to set uniform font size to.
+   * @enum {string}
+   */
+  var uniformSizeSelector = {
+    NAME: '.product-name',
+    PRICE: '.product-price'
+  };
+
+
+  /**
+   * Overrides global window.onAdData.
+   * @param  {!Object} data Dynamic data payload.
+   * @param  {!Object} util Dragomir util object.
+   */
+  window.onAdData = function(data, util) {
+    initPreloading(data);
+    utils.preloader.addCompletionListener(function() {
+      loadedRes = utils.preloader.getLoadedImages();
+      utils.onAdData(data, util);
+    });
+    utils.preloader.start();
+  };
+
+
+  /**
+   * Creates the list of the CSS classes to apply to the layout content
+   * depending on parameters from DAB.
+   * @param {!angular.Scope} scope AngularJS layout scope.
+   * @return {!Object.<string>} All available CSS classes.
+   */
+  function getClasses(scope) {
+    var design = scope.design;
+    var layout = [design['cornerStyle']];
+    var image = [design['cornerStyle']];
+    var bg = [];
+    var btn = [design['btnStyle']];
+
+    if (scope.toBoolean(design['bgGradient'])) {
+      layout.push('gradient');
+    }
+
+    if (design['bgImageUrl'] && scope.checkUrl(design['bgImageUrl']) &&
+        design['bgImageUrl'].toLowerCase() !== 'none' &&
+        design['bgImageUrl'].toLowerCase() !== 'blank') {
+      bg.push('image-bg');
+    }
+
+    if (scope.toBoolean(design['btnBevel'])) {
+      btn.push('bevel');
+    }
+
+    if (scope.toBoolean(design['btnShad'])) {
+      btn.push('shadow');
+    }
+
+    return {
+      layout: layout.join(' '),
+      bg: bg.join(' '),
+      button: btn.join(' '),
+      image: image.join(' ')
+    };
+  }
+
+
+  /**
+   * Controller for using data binding in layout.
+   * @param {!angular.Scope} $scope AngularJS layout scope.
+   * @param {!Object} dynamicData Dynamic data from DAB.
+   */
+  function LayoutController($scope, dynamicData) {
+    helpers.LayoutController($scope, dynamicData);
+    $scope.classes = getClasses($scope);
+
+    setTimeout(uniformSize, 500, uniformSizeSelector.PRICE);
+    setTimeout(uniformSize, 500, uniformSizeSelector.NAME);
+
+
+    /**
+     * Checks aspect ratio of the image. All images with aspect ratio
+     * less than 1.2 are considered to be thin.
+     * @return {boolean} Whether the image is thin or not.
+     */
+    $scope.checkThinLogo = function(aspect) {
+      if (aspect == undefined) {
+        aspect = ASPECT_RATIO;
+      }
+      var im = loadedRes[$scope.design.logoImageUrl];
+      return im != undefined && (im[0].width / im[0].height) < aspect;
+    };
+  }
+
+
+  /**
+   * Convenience alias for querySelectorAll that returns results as Array
+   * (instead of querySelectorAll's native nodeList.)
+   * @param  {string} selector A CSS-style selector. ex: "#foo .bar>img"
+   * @param  {Element=} opt_element Root element to query (document is default).
+   * @return {Array<Element>}
+   */
+  function getElementsList(selector, opt_element) {
+    var parentElement = opt_element || document;
+    return Array.prototype.slice.call(parentElement.querySelectorAll(selector));
+  }
+
+
+  /**
+   * Makes the font sizes of the elements to be unified by the smallest font
+   * size.
+   * @param {string} classToUniform String with selector for elements to
+   *     uniform.
+   */
+  function uniformSize(classToUniform) {
+    var smallestFontSize = 1000;
+    // Find smallest font size.
+    angular.forEach(getElementsList(classToUniform + ' span'),
+        function(textFitElement) {
+          // Make sure that the element is visible.
+          if (textFitElement.offsetParent) {
+            var elementMinimumFontSize =
+                textFitElement.parentElement.getAttribute('minfontsize');
+            var elementFontSize = parseInt(
+                helpers.getStyleProperty(textFitElement, 'font-size'));
+            if (elementFontSize < elementMinimumFontSize) {
+              elementFontSize = elementMinimumFontSize;
+            }
+            if (elementFontSize < smallestFontSize) {
+              smallestFontSize = elementFontSize;
+            }
+          }
+        });
+
+    // Make uniform.
+    angular.forEach(getElementsList(classToUniform), function(el) {
+      var ngEl = angular.element(el);
+      var ngSpan = angular.element(ngEl[0].querySelector('span'));
+      ngEl.css('font-size', smallestFontSize + 'px');
+      ngSpan.css('font-size', smallestFontSize + 'px');
+    });
+  }
+
+
+  /**
+   * Exposes enhanced btnSheen as a custom attribute.
+   * @param {!angular.$timeout} $timeout The Angular timeout service.
+   * @return {angular.Directive} Directive definition object.
+   */
+  module.directive('btnSheen', function($timeout) {
+    return {
+      restrict: 'A',
+      link: function(scope, el) {
+        var button = el[0];
+        $timeout(function() {
+          var width = button.getBoundingClientRect().width,
+              height = button.getBoundingClientRect().height,
+              borderRadius = window.getComputedStyle(button)
+                  .getPropertyValue('border-bottom-left-radius');
+          el.parent().append('<span id="sheen" class=""></span>');
+          var sheen = document.getElementById('sheen');
+          angular.element(sheen).css({
+            'border-radius': borderRadius,
+            'height': height + 'px',
+            'display': 'block',
+            'left': button.offsetLeft + 'px',
+            'position': 'absolute',
+            'top': button.offsetTop + 'px',
+            'width': width + 'px',
+            'z-index': 10
+          });
+        }, 125);
+      }
+    };
+  });
+
+  angular.module('layout', ['utils', module.name],
+      function($controllerProvider) {
+    $controllerProvider.allowGlobals();
+  });
+
+  return {
+    LayoutController: LayoutController
+  };
+})(angular);
+
+
+/**
+ * Layout specification.
+ */
+(function() {
+  // Retail vertical.
+  utils.defineMeta('layoutName', 'Standard_2a');
+  utils.defineMeta('version', '2.0');
+
+  // Required fields.
+  utils.defineAttribute('Headline', 'productClickOnly', true);
+
+  // Optional fields.
+  utils.defineAttribute('Headline', 'cta', false);
+  utils.defineAttribute('Headline', 'txt', false);
+  utils.defineAttribute('Headline', 'disclaimer', false);
+  utils.defineAttribute('Headline', 'showPrice', false);
+  utils.defineAttribute('Product', 'name', false);
+  utils.defineAttribute('Product', 'price', false);
+  utils.defineAttribute('Product', 'imageUrl', false);
+  utils.defineAttribute('Product', 'url', false);
+  utils.defineAttribute('Design', 'logoImageUrl', false);
+  utils.defineAttribute('Design', 'logoPadding', false);
+  utils.defineAttribute('Design', 'bgImageUrl', false);
+  utils.defineAttribute('Design', 'bgAlpha', false);
+  utils.defineAttribute('Design', 'bgColor', false);
+  utils.defineAttribute('Design', 'bgGradient', false);
+  utils.defineAttribute('Design', 'borderColor', false);
+  utils.defineAttribute('Design', 'cornerStyle', false);
+  utils.defineAttribute('Design', 'btnStyle', false);
+  utils.defineAttribute('Design', 'btnBevel', false);
+  utils.defineAttribute('Design', 'btnShad', false);
+  utils.defineAttribute('Design', 'btnColor', false);
+  utils.defineAttribute('Design', 'btnRollColor', false);
+  utils.defineAttribute('Design', 'txtColorCta', false);
+  utils.defineAttribute('Design', 'glowColor', false);
+  utils.defineAttribute('Design', 'txtColorTitle', false);
+  utils.defineAttribute('Design', 'txtColorPrice', false);
+  utils.defineAttribute('Design', 'txtColorProduct', false);
+  utils.defineAttribute('Design', 'txtColorDisc', false);
+  utils.defineAttribute('Design', 'headlineSize', false);
+  utils.defineAttribute('Design', 'nameSize', false);
+  utils.defineAttribute('Design', 'priceSize', false);
+  utils.defineAttribute('Design', 'fontUrl', false);
+
+  utils.defineOccurrences('Headline', 1, 1);
+  utils.defineOccurrences('Design', 1, 1);
+  utils.defineOccurrences('Product', 4, 4);
+
+  window.setup = function() {
+    var main = document.getElementById('main');
+    helpers.flex(angular.element(main));
+    document.getElementById('ad-container').addEventListener('click',
+        utils.clickHandler, false);
+  };
+
+  window.initPreloading = function(dynamicData) {
+    var data = dynamicData.google_template_data.adData[0];
+    var products = utils.parse(data, 'Product');
+    var design = utils.parse(data, 'Design')[0];
+    utils.preloader.addImage(design.logoImageUrl);
+    utils.preloader.addImage(design.bgImageUrl);
+    for (var i = 0; i < products.length; i++) {
+      utils.preloader.addImage(products[i].imageUrl);
+    }
+  };
+})();
