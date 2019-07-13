@@ -1,8 +1,13 @@
 # Honorine-Portfolio-Project(IP)
 
-## Honorine NIYONKURU
+## Authour:
 
-My Independent Project or portfolio project which talks about Honorine's ambition,skiils and active project i worked on. Through this Portofolio you will know who NIYONKURU Honorine is and what I am passionate on. Navigate it to get me well.
+ # Honorine NIYONKURU
+
+My Independent Project or portfolio project which talks about 
+Honorine's ambition,skiils and active project i worked on.
+ Through this Portofolio you will know who NIYONKURU Honorine is 
+ and what I am passionate on. Navigate it to get me well.
 
 ### Project Setup instruction
 
@@ -31,11 +36,11 @@ My Independent Project or portfolio project which talks about Honorine's ambitio
 
   #### Help? Contact details
    
-- [] E-mail: niygomhonor@gmail.com
-- [] Tel.Number:+250787309838
-- [] LinkedIn:NIYONKURU Honorine
-- [] Instagram:neodohonorine2001
-- [] Slack:NIYONKURU Honorine
+- [x] E-mail: niygomhonor@gmail.com
+- [x] Tel.Number:+250787309838
+- [x] LinkedIn:NIYONKURU Honorine
+- [x] Instagram:neodohonorine2001
+- [x] Slack:NIYONKURU Honorine
 
 ## License Information
 
