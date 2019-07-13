@@ -18,10 +18,10 @@ Honorine's ambition,skiils and active project i worked on.
 
 ### Application Used
 
-* Visual Studio Code 
-      * HTML
-      * css
-* Terminal
++ Visual Studio Code 
+    * HTML
+    * css
++ Terminal
 
 ### Technology used
 
