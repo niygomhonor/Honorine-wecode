@@ -44,9 +44,9 @@ Honorine's ambition,skiils and active project i worked on.
 
 
 
-##Navigate My Portofolio website
+## Navigate My Portofolio website
 
-- [x] [Honorine-Portfolio-Website] (https://niygomhonor.github.io/Honorine-wecode/)
+ [Honorine-Portfolio-Website] (https://niygomhonor.github.io/Honorine-wecode/)
 
 ## License Information
 
