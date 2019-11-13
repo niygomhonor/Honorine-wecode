@@ -2,12 +2,13 @@ h2.head-2{
     text-align: center;
     border: 5px;
     border-block-end: 10px;
-    color: lightcoral;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-style: italic;
+    font-family: 'Domine', serif;
 }
-.container{
-    background-image: url("http://tinymoongarden.com/wp-content/uploads/amazing-programmer-desk-setup-with-bettercoder-behind-the-scenes-desksetup-tour-youtube.jpg");
-    height:20%;
+.containera{
+
+    background-image: url("https://i.pinimg.com/originals/d6/68/ab/d668abc72809303852c27275e6a56775.gif");
+    height:80%;
     margin-bottom:60px;
     top:0;
     left:0;
@@ -21,22 +22,29 @@ h2.head-2{
 	position:relative;
 	height:auto;
 	overflow:hidden;
-	background:none;
+    background:none;
+    text-decoration: none;
+}
+li,ul{
+    float: left;
+    text-decoration: none;
+    list-style: none;
 }
 .section-1 h1{
     text-shadow: rgba(51, 3, 3, 0.5);
-    float: right;
+    /* float: right; */
    text-align: center;
     color: #7c854b;
     font-size: 50px;
-    font-family: 'Franklin Gothic Medium','Arial Narrow', Arial, sans-serif;
+    font-family: 'Domine', serif;
 
 }
 .section-1 .navbar a{
    display: inline-block;
+   text-decoration: none;
    padding: 1em 3em;
    text-decoration-color: honeydew;
-   border-bottom: 2px solid #fff;
+ 
    transition-property: all .2s linear 0s;
    -moz-transition: all .2s linear 0s;
    -webkit-transition: all .2s linear 0s;
@@ -45,17 +53,17 @@ h2.head-2{
 }
 a:hover{
 color:royalblue;
-border: 5px;
-box-shadow:5em 5px 20px #94a964;
+border: 2px;
+/* box-shadow:5em 5px 20px #94a964; */
 }
 a{
     color: rgb(226, 109, 12);
-    text-align-last: left;
+    /* text-align-last: left; */
     
 }
 .aboutme{
     text-align: center;
-    background-color: #607474;
+    /* background-color: #607474; */
     display:flex;
     flex-direction: row; 
     justify-content: space-around;
@@ -63,17 +71,18 @@ a{
     height: 100%;
 }
 
-.Section-2 ol{
+.Section-2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-radius: 40%;
 }
 .project-1,.project-2{
     box-shadow: 0 4px 7px 0 #2c181880;
     width:300px;
     margin:top;
     text-align:center;
-    font-family:none;
+    font-family: 'Domine', serif;
 }
 .description{
     color: darkblue;
@@ -94,20 +103,37 @@ margin-left: 20px;
     border: 3em;
 border-color: darkolivegreen;
 }
-
-.skill{
-    display:flex;
-    flex-direction: row; 
-    justify-content: space-around;
+p{
+    font-family: 'Domine', serif;
 }
 
 .divix,.divixi,.divizo{ 
-     box-shadow: 0 4px 7px 0 rgba(0,0,0,0.5);
-     width:300px;
+     /* box-shadow: 0 4px 7px 0 rgba(0,0,0,0.5); */
+     width:200px;
      margin:top;
      text-align:center;
-     font-family:none;
+     /* font-family:none; */
 }
+
+.skillb{
+    display:flex;
+    flex-direction: row; 
+justify-content: space-around
+}
+.skilla{
+    display:flex;
+    flex-direction: row; 
+justify-content: space-around
+}
+
+
+.diviza,.divizu,.divize{
+
+    width:200px;
+    margin:top;
+    text-align:center;
+}
+
 .divix:hover,.divixi:hover,.divizo:hover{
     cursor: pointer;
     transition: all 0.38s ease;
@@ -115,9 +141,9 @@ border-color: darkolivegreen;
     background: #fff;
     margin-bottom: 12px;
 }
-.section-3{
+/* .section-3{
 background-color: rgb(145, 176, 196);
-}
+} */
 .color{
     color: rgba(1, 1, 14, 0.842);
     font-family: sans-serif;
@@ -195,14 +221,14 @@ text-align: center;
   }
   .icons{
       display:inline-block;
-      width: 53px;
+      width: 43px;
       height: 60px;
-      background:#94a964;
+margin-left: 300px;
       margin: 10px;
       border-radius: 30%;
       box-shadow: 0 5px -5px #217fd680;
-      color: rgb(32, 9, 114);
-      overflow: hidden;
+      color: rgb(14, 12, 22);
+      
       position: relative;
   }
   .icons i{
