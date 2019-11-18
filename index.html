@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <link href="https://fonts.googleapis.com/css?family=Domine&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -27,14 +28,14 @@
             <br><br><br><br><br><br><br><br><br><br><br><BR>
                 <h1 class="head-2"> Hello,I am NIYONKURU Honorine</h1><br>
                 <h3 class="head-2" style="color:white;text-align:center; font-family: 'Domine', serif;">A Java and Android Developer</h3>
-                
+                <p style="text-align:center;color:white">I am a Java and Android Developer, solving my community problems is my ambition through my coding skills</p>
                 <br><br>
             </div>
          <br><br><br><br><br><br><br><br><br><br><BR><br><br><br><br><BR> <br><br>
         </div>
     </div>
 
-    <div id="B" style="height:100%">
+    <!-- <div id="B" style="height:100%">
           
             <div class="jumbotron">
                     <br><br><br><br><BR> <br><br>
@@ -57,7 +58,10 @@
         <br><BR><br><BR>
     </div>
     <BR><br><BR><br><BR><br>
+    </div> -->
+    <BR><br><BR><br><BR><br>
     <div id="C" style="height:100%">
+
         <h2 class="head-2">PROJECTS</h2>
 
         <br> <br> <br>
@@ -91,8 +95,14 @@
                             <p class="description">This project is for designing web application where customers will find easly designers and equipemtes for the houses.</p>
                                 <a href="https://amandinek.github.io/kagInteriors/"> Navigate it</a>
                             </div>
+                            <div class="project-2">
+                                    <h3><span class="color"> GitHub Search</span></h3>
+                                    <img src="Honorine-image/gitSearch.jpg" height="300" width="300">
+                                    <p class="description">This website allows user to search his/her profile and repositories on GitHub.</p>
+                                        <a href="https://amandinek.github.io/kagInteriors/"> Navigate it</a>
+                                    </div>
                 </div>
-                <br><br><br><br><BR>  <br><br><br><br><BR>  <br><br><br><br><BR>   
+                <br><br><br><br><BR>  <br><br><br><br><BR>     
                  
             </div>
             <div id="D" style="height:100%">
@@ -142,37 +152,38 @@
             </div>
     
             <br><br><br><br><br><br><br><br>
-            <br><br><br><br><BR>
+          
                 
             <div id="E" style="height:100%">
           
-        <div class="contact" style="margin-left:200px">
+        <div class="contact" >
             <h2 class="head-2">GET IN TOUCH</h2>
         </div>
             <br><br><br><br>
         <div class="head-2" style="margin-left:50px">
-                
-                    <form target="_blank" >
+                <br>
+                    <form  class="form-row">
                             <div class="personalinfo">
                                     <label style="margin-left:250px">Name</label>
-                                    <input class="form-control" required name="Name" style="margin-left:250px">
+                                    <input class="form-control" required name="Name" id="fullName" style="margin-left:250px">
                                   </div>
                             <div class="personalinfo">
                               <label style="margin-left:250px">Email</label>
-                              <input class="form-control" type="email" required name="Email" style="margin-left:250px">
+                              <input class="form-control" id="myEmail" type="email" required name="Email" style="margin-left:250px">
                             </div>
                             <div class="yourmessage">
                               <label style="margin-left:250px">Message</label>
-                              <input class="form-control" required name="Message" style="margin-left:250px">
+                              <input class="form-control" id="sms" required name="Message" style="margin-left:250px">
                             </div>
-                            <button type="submit" style="border-radius:30%;margin-left:450px; margin-top: 40px" class="submit">Send</button>
+                            <button type="submit" style="border-radius:30%;margin-left:450px; margin-top: 40px" onclick="myDesign()" class="submit">Send</button>
+                     
                     </form>
         </div>
   
             </div>
             <br><br><br><br>
             <div class="contacts">
-                    <h2 class="head-2">MEET ME HERE</h2>
+                  
                     <div class="footer">
                         
                         <a class="icons" target="_blank" style="margin-left:45%" href="https://www.linkedin.com/in/niyonkuru-honorine-705a71179/?midToken=AQF0au1r9eTcXQ&trk=eml-email_welcome_app_download_v1-header-23-profile&trkEmail=eml-email_welcome_app_download_v1-header-23-profile-null-bqwi45~jxvsl3qp~2f-null-neptune%2Fprofile~vanity%2Eview">
@@ -186,5 +197,7 @@
                       </a>
                     </div>
                 </div>
+                <br><br><br><br>
     </body>
+    <script src="Honorine-js/styles.js"></script>
 </html>
